@@ -1,132 +1,143 @@
 # Unity Learning Projects
 
-This repository contains my Unity learning work. It is a place to practice Unity, C#, game logic, movement, collisions, triggers, prefabs, physics, level design, and small gameplay systems.
+This repository is my Unity learning workspace. It keeps beginner Unity projects, C# notes, gameplay experiments, and project README files together in one organized place.
 
-The main purpose of this repo is to keep learning notes and beginner Unity projects together in one organized place.
+The main goal is to learn Unity by building small things, testing ideas, and writing notes that are easy to revise later.
 
-## What This Repository Is About
-
-This repo is about learning Unity by building and experimenting.
-
-It contains:
-
-- Unity C# learning notes.
-- Small scripts that explain basic Unity concepts.
-- A beginner obstacle-dodging game prototype.
-- Practice with collisions, triggers, Rigidbody physics, movement, materials, prefabs, and level design.
-- README files and `.gitignore` files for better project organization.
-
-## Why This Repository Exists
-
-This repository is made for practice and progress.
-
-The goals are:
-
-- To learn Unity step by step.
-- To understand how C# scripts control GameObjects.
-- To keep useful notes in one place.
-- To build small projects instead of only reading theory.
-- To track progress with Git.
-- To create a base for future Unity games.
-
-## What This Can Be Used For
-
-You can use this repository to:
-
-- Review Unity basics.
-- Study simple C# Unity scripts.
-- Open and test a small Unity game project.
-- Practice adding features to a game.
-- Learn how Unity project folders are organized.
-- Track improvement over time.
-
-## Folder Description
+## Repository Contents
 
 ```text
 Unity/
 +-- Obstacle Dodge/
++-- Rocket Boost/
 +-- Unity_Learn/
+|   +-- UnityLearn1/
+|   +-- UnityLearn2/
 +-- readme.md
 ```
 
-## Obstacle Dodge
+## Projects
 
-`Obstacle Dodge` is a Unity game prototype.
+### Obstacle Dodge
 
-It is about moving a player through an obstacle course while avoiding hazards, falling objects, and flying projectiles.
+`Obstacle Dodge` is a playable Unity prototype where the player moves through an obstacle course while avoiding hazards.
 
-Main ideas in this project:
+It currently includes:
 
-- Player movement with WASD or arrow keys.
-- Obstacles that react when the player hits them.
-- Collision detection.
-- Trigger zones.
-- Flying objects.
-- Falling objects.
-- Rotating objects.
-- Simple score/count logic.
-- Materials and prefabs.
-- A playable Unity scene.
+- Player movement with WASD or arrow keys
+- Obstacles that react to collisions
+- Score/count tracking through Console logs
+- Falling sky obstacles
+- Trigger zones
+- Flying projectile objects
+- Rotating obstacles
+- Materials and prefabs
+- An updated `SampleScene.unity` scene
 
-Important folders inside `Obstacle Dodge`:
+Main scene:
 
-- `Assets` - main Unity game files.
-- `Assets/Scripts` - gameplay C# scripts.
-- `Assets/Scenes` - Unity scenes.
-- `Assets/Materials` - materials used by objects.
-- `Assets/PreFabs` - reusable prefab objects.
-- `Packages` - Unity package dependencies.
-- `ProjectSettings` - Unity project settings.
+```text
+Obstacle Dodge/Assets/Scenes/SampleScene.unity
+```
 
-To start this project:
+Project README:
+
+```text
+Obstacle Dodge/readme.md
+```
+
+### Rocket Boost
+
+`Rocket Boost` is a Unity prototype focused on controlling a rocket in a 3D scene.
+
+It currently includes:
+
+- A sandbox scene
+- A rocket movement script
+- Simple keyboard movement
+- Unity Input System practice
+- GameDev.tv sci-fi assets
+- URP project settings
+
+Main scene:
+
+```text
+Rocket Boost/Assets/Scenes/Sandbox.unity
+```
+
+Project README:
+
+```text
+Rocket Boost/readme.md
+```
+
+## Learning Notes
+
+### UnityLearn1
+
+`Unity_Learn/UnityLearn1` contains beginner Unity C# notes and practice scripts.
+
+Topics include:
+
+- Unity basics
+- Variables and methods
+- `SerializeField`
+- `Start()` and `Update()`
+- Transform movement
+- Rotation
+- `Time.time` and `Time.deltaTime`
+- Rigidbody physics
+- Collisions and triggers
+- Tags
+- Prefabs
+- Destroying objects
+- Score logic
+- Hazards and difficulty progression
+- Unity execution order
+
+README:
+
+```text
+Unity_Learn/UnityLearn1/readme.md
+```
+
+### UnityLearn2
+
+`Unity_Learn/UnityLearn2` is a C# notes project focused on Unity concepts and code structure.
+
+Topics include:
+
+- Importing assets
+- Empty GameObjects
+- Namespaces and classes
+- Unity Input Actions
+- `OnEnable()` and `OnDisable()`
+
+README:
+
+```text
+Unity_Learn/UnityLearn2/readme.md
+```
+
+## How To Open The Unity Projects
 
 1. Open **Unity Hub**.
 2. Click **Add** or **Open**.
-3. Select the `Obstacle Dodge` folder.
-4. Open `Assets/Scenes/SampleScene.unity`.
-5. Press the **Play** button in Unity.
+3. Select either `Obstacle Dodge` or `Rocket Boost`.
+4. Wait for Unity to import the project.
+5. Open the main scene for that project.
+6. Press **Play** in the Unity Editor.
 
-## Unity_Learn
+## Suggested Learning Order
 
-`Unity_Learn` contains learning notes and practice scripts.
-
-This folder is for understanding Unity concepts before or while building games.
-
-It currently contains:
-
-- `UnityLearn1` - a collection of beginner Unity C# notes and scripts.
-
-Topics covered in `UnityLearn1` include:
-
-- Unity basics.
-- Methods and variables.
-- `SerializeField`.
-- `Start()` and `Update()`.
-- Movement with Transform.
-- Rotation.
-- `Time.time` and `Time.deltaTime`.
-- Rigidbody physics.
-- Collisions and triggers.
-- Tags.
-- Prefabs.
-- Destroying objects.
-- Score logic.
-- Level layout ideas.
-- Hazards and difficulty progression.
-- Unity execution order.
-
-## How To Start Learning
-
-A good order is:
-
-1. Read the root README file.
-2. Open `Unity_Learn/UnityLearn1/readme.md`.
-3. Study the beginner scripts in `UnityLearn1`.
-4. Open the `Obstacle Dodge` project in Unity.
-5. Play the scene and watch the Console.
+1. Read `Unity_Learn/UnityLearn1/readme.md`.
+2. Study the beginner scripts in `UnityLearn1`.
+3. Read `Unity_Learn/UnityLearn2/readme.md`.
+4. Review the UnityLearn2 notes about assets, classes, input actions, and lifecycle methods.
+5. Open `Obstacle Dodge` and test the updated scene.
 6. Read the scripts in `Obstacle Dodge/Assets/Scripts`.
-7. Try changing small values like speed, fall delay, or rotation speed.
-8. Add one small feature at a time.
+7. Open `Rocket Boost` and test the sandbox scene.
+8. Try changing small values like movement speed, rotation speed, fall delay, or thrust input.
 
 ## Tools Used
 
@@ -135,12 +146,13 @@ A good order is:
 - C#
 - Visual Studio or another C# editor
 - Git
-
-The `Obstacle Dodge` project also uses Unity packages such as Universal Render Pipeline, Input System, Cinemachine, and other standard Unity packages.
+- Universal Render Pipeline
+- Unity Input System
+- Cinemachine
 
 ## Git Notes
 
-The `.gitignore` files are set up to avoid committing generated Unity folders and editor files.
+Unity creates many generated folders and editor files. The `.gitignore` files are set up to avoid committing most generated content.
 
 Usually keep these in Git:
 
@@ -157,26 +169,21 @@ Usually do not commit these:
 - `Logs`
 - `UserSettings`
 - `.vs`
-- generated `.csproj` and solution files
-
-## Future Goals
-
-Future improvements for this repository:
-
-- Add more Unity learning examples.
-- Improve code style and script names.
-- Add comments where concepts are difficult.
-- Add screenshots or gameplay images.
-- Add a better UI to `Obstacle Dodge`.
-- Add win and lose conditions.
-- Add sound effects and music.
-- Add more levels.
-- Add checkpoints.
-- Add a main menu.
-- Build a small complete game from the current prototype.
+- generated build output
 
 ## Current Status
 
-This repository is currently a learning workspace. It has one main playable Unity prototype and one learning-notes folder.
+This repository now contains:
 
-The next best step is to keep improving `Obstacle Dodge` while using `UnityLearn1` as a reference for Unity concepts.
+- One playable obstacle-dodging prototype with an updated scene
+- One rocket movement prototype
+- Two Unity/C# learning note folders
+- README files for the root workspace and each main project
+
+## Future Goals
+
+- Improve `Obstacle Dodge` with UI, win/lose conditions, checkpoints, sound, and more levels.
+- Improve `Rocket Boost` with physics-based thrust, rotation, collisions, landing pads, particles, and level progression.
+- Add more Unity learning notes as new topics are studied.
+- Add screenshots or short gameplay previews.
+- Keep README files updated as each project changes.

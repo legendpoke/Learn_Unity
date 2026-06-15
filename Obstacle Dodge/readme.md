@@ -4,6 +4,10 @@ Obstacle Dodge is a beginner Unity game prototype where the player moves through
 
 The project is built as a learning game. It practices Unity fundamentals like player movement, collisions, triggers, Rigidbody physics, prefabs, materials, object rotation, delayed events, and simple score tracking.
 
+## Scene Update
+
+The main scene has been updated. `Assets/Scenes/SampleScene.unity` now includes the current obstacle course layout with the player, obstacle prefabs, rotating objects, falling sky obstacles, trigger projectile setup, materials, and camera setup needed to test the game.
+
 ## Game Idea
 
 The main goal is simple:
@@ -209,6 +213,6 @@ Rotates an object every frame.
 
 ## Current Status
 
-This project is a playable learning prototype. It is not finished yet, but it already has the core building blocks of an obstacle-dodging game.
+This project is a playable learning prototype. The scene has been updated with the current obstacle-dodging setup, and it already has the core building blocks of an obstacle-dodging game.
 
 The best next step is to turn the Console-based feedback into real on-screen UI, then add win/lose conditions so the game has a clear beginning, challenge, and ending.
