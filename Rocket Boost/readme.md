@@ -1,71 +1,157 @@
 # Rocket Boost
 
-Rocket Boost is a small Unity prototype focused on controlling a rocket in a 3D scene. The project currently contains a sandbox level, a rocket movement script, and GameDev.tv sci-fi assets used to build the environment and rocket visuals.
+Rocket Boost is a Unity 3D prototype focused on learning rocket movement, player input, and physics-based gameplay. The player controls a rocket using Unity's Input System and Rigidbody physics while navigating a sci-fi environment built with GameDev.tv assets.
 
 ## Project Overview
 
-The main goal of this project is to practice basic Unity gameplay scripting:
+This project is designed to practice fundamental Unity development concepts:
 
-- Reading keyboard input
-- Moving a GameObject with `transform.Translate`
-- Using Unity's Input System package
-- Testing simple player controls in a sandbox scene
+* Unity Input System
+* Physics-based movement with Rigidbody
+* Applying forces using `AddRelativeForce`
+* Object rotation and player controls
+* FixedUpdate for physics calculations
+* Scene and level prototyping
+
+## Features
+
+* Physics-based rocket thrust
+* Left and right rocket rotation
+* Unity Input System integration
+* Rigidbody-driven movement
+* Sci-fi themed environment assets
+* Sandbox testing scene
 
 ## Controls
 
-Current controls from `Assets/Scripts/RocketMove.cs`:
+Current controls are configured through Unity's Input System actions.
 
-| Key | Action |
-| --- | --- |
-| `Space` | Move the rocket upward |
-| `D` | Move the rocket right |
-| `W` | Move the rocket forward |
+| Input                      | Action                            |
+| -------------------------- | --------------------------------- |
+| Thrust Action              | Apply upward thrust to the rocket |
+| Rotation Action (Positive) | Rotate rocket clockwise           |
+| Rotation Action (Negative) | Rotate rocket counter-clockwise   |
 
-The script also has a serialized `InputAction` named `thrust`, which logs a message while the assigned thrust input is pressed.
+> Input bindings can be modified directly in the Unity Inspector through the serialized `InputAction` fields.
+
+## How Movement Works
+
+### Thrust
+
+When the thrust action is pressed:
+
+```csharp
+rocketRigidbody.AddRelativeForce(
+    Vector3.up * thrustStrength * Time.fixedDeltaTime
+);
+```
+
+The rocket applies force relative to its local upward direction, allowing movement in whichever direction it is currently facing.
+
+### Rotation
+
+Rotation input is read using:
+
+```csharp
+float inputRotation = Rotation.ReadValue<float>();
+```
+
+Positive values rotate the rocket one way, while negative values rotate it in the opposite direction.
+
+### Physics Update
+
+All movement calculations occur inside:
+
+```csharp
+FixedUpdate()
+```
+
+to ensure smooth and consistent physics behavior.
 
 ## Project Structure
 
 ```text
 Rocket Boost/
 +-- Assets/
-|   +-- GameDevTV Assets/      # Models, materials, textures, and prefabs
+|   +-- GameDevTV Assets/
+|   |   +-- Models
+|   |   +-- Materials
+|   |   +-- Textures
+|   |   +-- Prefabs
+|   |
 |   +-- Scenes/
-|   |   +-- Sandbox.unity      # Main test scene
+|   |   +-- Sandbox.unity
+|   |
 |   +-- Scripts/
-|   |   +-- RocketMove.cs      # Rocket movement/input script
-|   +-- Settings/              # URP and rendering settings
+|   |   +-- RocketMove.cs
+|   |
+|   +-- Settings/
+|
 +-- Packages/
-|   +-- manifest.json          # Unity package dependencies
-+-- ProjectSettings/           # Unity project configuration
-+-- readme.md
+|   +-- manifest.json
+|
++-- ProjectSettings/
+|
++-- README.md
 ```
+
+## Script Breakdown
+
+### RocketMove.cs
+
+Responsible for:
+
+* Reading player input
+* Enabling Input Actions
+* Applying thrust force
+* Rotating the rocket
+* Managing Rigidbody movement
+
 
 ## Requirements
 
-- Unity `6000.4.9f1`
-- Universal Render Pipeline
-- Unity Input System package
+* Unity 6 (6000.4.9f1)
+* Universal Render Pipeline (URP)
+* Unity Input System Package
 
 ## How to Run
 
 1. Open Unity Hub.
-2. Click **Add** or **Open** and select the `Rocket Boost` folder.
-3. Open the scene at `Assets/Scenes/Sandbox.unity`.
-4. Press **Play** in the Unity Editor.
-5. Use the controls listed above to test the rocket movement.
+
+2. Open the project folder.
+
+3. Load:
+
+   Assets/Scenes/Sandbox.unity
+
+4. Press Play.
+
+5. Use the configured input actions to control the rocket.
 
 ## Current Status
 
-This is an early learning prototype. The rocket can move in simple one-unit steps using keyboard input, and the project is ready for more gameplay features.
+Current implementation includes:
 
-## Possible Next Steps
+* Physics-based thrust
+* Rocket rotation
+* Rigidbody movement
+* Input System controls
+* Sandbox environment testing
 
-- Replace step movement with smooth physics-based thrust.
-- Add left and right rotation controls.
-- Add collision detection for obstacles and landing pads.
-- Add particle effects and audio for rocket thrust.
-- Create multiple levels with win/fail conditions.
+This project serves as a foundation for building a complete rocket landing and obstacle navigation game.
+
+## Planned Features
+
+* Collision detection
+* Landing pads
+* Success and crash states
+* Level progression
+* Audio effects
+* Particle systems
+* Fuel system
+* Multiple levels
+* UI and score tracking
 
 ## Credits
 
-This project uses GameDev.tv asset files included inside `Assets/GameDevTV Assets`.
+Environment assets, models, textures, and materials are provided by GameDev.tv and are used for educational purposes within this project.

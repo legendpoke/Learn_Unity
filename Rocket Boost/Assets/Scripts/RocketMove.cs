@@ -1,50 +1,52 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class RocketMove : MonoBehaviour
 {
     [SerializeField] InputAction thrust;
-    float xValue = 0f;
-    float yValue = 0f;
-    float zValue = 0f;
+    [SerializeField] InputAction Rotation;
+    float rocketRotationSpeed = 20f;
+    private float thrustStrength = 1000f; 
+    Rigidbody rocketRigidbody;
+    private void Start()
+    {
+        rocketRigidbody = GetComponent<Rigidbody>();
+    }
+
     private void OnEnable()
     {
         thrust.Enable();
+        Rotation.Enable();
     }
 
-    void RocketUp()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Debug.Log("Space is pressed");
-            float IncYvalue = yValue + 1f;
-            transform.Translate(xValue,IncYvalue,zValue);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Debug.Log("D is pressed");
-            float IncXvalue = xValue + 1f;
-            transform.Translate(IncXvalue,yValue,zValue);
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            Debug.Log("W is pressed");
-            float IncZvalue = zValue + 1f;
-            transform.Translate(xValue, yValue, IncZvalue);
-        }
-    }
-    void Start()
-    {
-        
-    }
-
-    void Update()
+    private void ThrustProcess()
     {
         if (thrust.IsPressed())
         {
-            Debug.Log("Space Bar is pressed");
+            rocketRigidbody.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
         }
-        RocketUp();
+    }
+
+    private void RotationProcess()
+    {
+        float InputRotation = Rotation.ReadValue<float>();
+        Debug.Log("The value is rotated : " + InputRotation);
+
+        if(InputRotation > 0)
+        {
+            transform.Rotate(Vector3.forward * rocketRotationSpeed * Time.fixedDeltaTime);
+        }
+
+        else if (InputRotation < 0)
+        {
+            transform.Rotate(Vector3.back * rocketRotationSpeed * Time.fixedDeltaTime);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        ThrustProcess();
+        RotationProcess();
     }
 }

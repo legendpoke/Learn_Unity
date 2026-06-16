@@ -1,129 +1,310 @@
 # UnityLearn2
 
-UnityLearn2 is a C# learning notes project for Unity basics. It contains beginner-friendly notes written inside `.cs` files, with each file focused on one Unity or C# topic.
+UnityLearn2 is a C# learning notes project focused on Unity fundamentals and beginner-friendly game development concepts. Each `.cs` file acts as a study note that explains one Unity or C# topic through comments, examples, revision notes, and conceptual diagrams.
 
-This folder is not a full Unity scene project. It is mainly used as a study/reference project for understanding Unity concepts before applying them in game projects like **Obstacle Dodge** and **Rocket Boost**.
+This repository is not a complete Unity game project. Instead, it serves as a personal knowledge base and revision guide for learning Unity concepts before applying them in practical projects such as Rocket Boost, Obstacle Dodge, and future Unity games.
 
 ## Topics Covered
 
-- Importing assets into Unity
-- Why Empty GameObjects are useful
-- Namespaces and classes in C#
-- Unity Input Actions
-- `OnEnable()` and `OnDisable()` lifecycle methods
+### C# Fundamentals
+
+* Namespaces
+* Classes
+* Using directives
+* Code organization
+
+### Unity Fundamentals
+
+* Importing assets
+* Empty GameObjects
+* Parent-child hierarchy
+* Unity lifecycle methods
+
+### Unity Input System
+
+* Input Actions
+* Reading input values with `ReadValue<T>()`
+* Action enabling and disabling
+
+### Physics & Movement
+
+* Rigidbody components
+* Physics-based movement
+* `AddRelativeForce()`
+* Rotation input
+* Frame-independent movement concepts
 
 ## Project Structure
 
 ```text
 UnityLearn2/
++-- AddRelativeForce.cs
 +-- EmptyObjectImportance.cs
 +-- ImportingAssests.cs
 +-- InputActions.cs
 +-- NameSpaces_Classes.cs
 +-- onEnable_onDisable.cs
++-- ReadValue.cs
++-- RotationInput.cs
 +-- UnityLearn2.csproj
 +-- UnityLearn2.slnx
-+-- readme.md
++-- README.md
 ```
 
 ## File Guide
 
-### EmptyObjectImportance.cs
+### NameSpaces_Classes.cs
 
-Explains what an Empty GameObject is and why it matters in Unity.
+Introduces basic C# structure and organization.
 
-Main ideas:
+Topics:
 
-- Empty GameObjects only have a Transform component.
-- They are useful as parent objects.
-- They help organize large scenes.
-- They can be used as spawn points, waypoints, camera targets, pivot points, and manager objects.
+* Namespaces
+* Classes
+* Responsibilities of classes
+* Using directives
+* Script organization
+
+---
 
 ### ImportingAssests.cs
 
-Explains how assets are brought into Unity projects.
+Explains how assets are imported into Unity projects.
 
-Main ideas:
+Topics:
 
-- Assets are files used by a game, such as models, textures, audio, scripts, materials, prefabs, and animations.
-- Assets can be imported by drag-and-drop, the Unity import menu, or the Unity Asset Store.
-- Organized folders make Unity projects easier to manage.
+* Models
+* Textures
+* Audio
+* Materials
+* Prefabs
+* Animations
+* Project folder organization
 
-Note: the file name is currently `ImportingAssests.cs`. The class inside is named `ImportingAssets`.
+Note: The file name is currently `ImportingAssests.cs`, while the class name is `ImportingAssets`.
+
+---
+
+### EmptyObjectImportance.cs
+
+Explains the purpose and usefulness of Empty GameObjects.
+
+Topics:
+
+* Transform-only GameObjects
+* Scene organization
+* Parent objects
+* Spawn points
+* Waypoints
+* Camera targets
+* Manager objects
+
+---
 
 ### InputActions.cs
 
-Explains the newer Unity Input System and the idea of Input Actions.
+Introduces Unity's modern Input System.
 
-Main ideas:
+Topics:
 
-- Input Actions represent player commands like move, jump, shoot, pause, or interact.
-- Bindings connect actions to keys, mouse buttons, controller buttons, or other devices.
-- Action Maps group related actions, such as Player controls or UI controls.
-- Input Actions are better for multi-device support and rebinding than checking individual keys everywhere.
+* Input Actions
+* Action Maps
+* Bindings
+* Multi-device support
+* Input abstraction
 
-### NameSpaces_Classes.cs
+Examples:
 
-Explains basic C# namespaces and classes.
+* Move
+* Jump
+* Shoot
+* Interact
+* Pause
 
-Main ideas:
+---
 
-- Namespaces organize classes.
-- Classes organize variables and methods.
-- Classes usually focus on one responsibility.
-- `using` statements allow access to classes from another namespace.
-- Unity scripts usually use one class per script.
+### ReadValue.cs
+
+Explains how input values are retrieved from Input Actions.
+
+Topics:
+
+* `ReadValue<T>()`
+* Generic types
+* Reading floats
+* Reading Vector2 values
+* Reading Vector3 values
+* Movement input
+* Controller input
+
+Common examples:
+
+```csharp
+action.ReadValue<float>();
+action.ReadValue<Vector2>();
+action.ReadValue<Vector3>();
+```
+
+---
+
+### RotationInput.cs
+
+Explains how player input can be used to rotate objects.
+
+Topics:
+
+* Rotation controls
+* Rotation axes
+* Rotation speed
+* Frame-independent rotation
+* Vehicle steering
+* Rocket turning
+* Spaceship controls
+
+Examples:
+
+* A / D keys
+* Arrow keys
+* Controller input
+
+---
+
+### AddRelativeForce.cs
+
+Explains Unity physics-based movement using Rigidbody forces.
+
+Topics:
+
+* `AddRelativeForce()`
+* Local space movement
+* Rigidbody requirements
+* Physics acceleration
+* Rockets and spaceships
+* Difference between `AddForce()` and `AddRelativeForce()`
+* Difference between `Translate()` and `AddRelativeForce()`
+
+Important concepts:
+
+```csharp
+rocketRigidbody.AddRelativeForce(Vector3.up * thrustStrength);
+```
+
+and
+
+```csharp
+FixedUpdate()
+```
+
+for physics calculations.
+
+---
 
 ### onEnable_onDisable.cs
 
-Explains Unity's `OnEnable()` and `OnDisable()` event methods.
+Explains Unity lifecycle methods.
 
-Main ideas:
+Topics:
 
-- `OnEnable()` runs when a GameObject or component becomes active/enabled.
-- `OnDisable()` runs when a GameObject or component becomes inactive/disabled.
-- These methods are useful for event subscription, cleanup, timers, UI panels, and setup logic.
-- `Start()` runs once, while `OnEnable()` can run multiple times.
+* `OnEnable()`
+* `OnDisable()`
+* Event subscriptions
+* Event cleanup
+* UI activation
+* Timers
+* Component lifecycle
+
+Comparison:
+
+* `Start()` runs once.
+* `OnEnable()` can run multiple times.
 
 ## How To Use This Project
 
 1. Open `UnityLearn2.slnx` in Visual Studio or another C# editor.
 2. Read each `.cs` file as a lesson note.
-3. Use the short revision sections inside each file for quick review.
-4. Apply the ideas in Unity projects by creating scripts, GameObjects, prefabs, and input controls.
+3. Review the revision summaries at the bottom of each file.
+4. Practice the concepts inside Unity projects.
+5. Expand the notes as new topics are learned.
 
-## Learning Path
+## Recommended Learning Path
 
-A good order to read the files:
+### Beginner Level
 
-1. `NameSpaces_Classes.cs`
-2. `ImportingAssests.cs`
-3. `EmptyObjectImportance.cs`
-4. `InputActions.cs`
-5. `onEnable_onDisable.cs`
+1. NameSpaces_Classes.cs
+2. ImportingAssests.cs
+3. EmptyObjectImportance.cs
 
-This order starts with basic C# structure, then moves into Unity project organization and gameplay behavior.
+### Unity Basics
+
+4. InputActions.cs
+5. ReadValue.cs
+6. onEnable_onDisable.cs
+
+### Physics & Gameplay
+
+7. RotationInput.cs
+8. AddRelativeForce.cs
+
+This progression moves from C# fundamentals into Unity systems, input handling, and finally physics-based gameplay mechanics.
 
 ## Concepts Practiced
 
-- C# namespaces
-- C# classes
-- Variables and methods
-- Unity assets
-- Unity GameObjects
-- Empty GameObjects
-- Parent-child hierarchy
-- Unity Input System
-- Input Action bindings
-- Unity event methods
-- Object enable/disable flow
+### C#
+
+* Namespaces
+* Classes
+* Methods
+* Variables
+* Code organization
+
+### Unity Engine
+
+* Assets
+* GameObjects
+* Components
+* Hierarchy
+* Lifecycle methods
+
+### Input System
+
+* Input Actions
+* Bindings
+* Action Maps
+* ReadValue<T>()
+
+### Physics
+
+* Rigidbody
+* AddRelativeForce()
+* Local Space
+* World Space
+* FixedUpdate()
+
+### Gameplay Programming
+
+* Rocket controls
+* Rotation systems
+* Physics movement
+* Player input handling
 
 ## Current Status
 
-This project is a learning notes collection. The notes are written clearly for revision and can be expanded as new Unity topics are learned.
+This project is an expanding Unity learning notebook written entirely in C# files.
+
+The notes currently cover:
+
+* Unity fundamentals
+* Input System basics
+* Lifecycle methods
+* Rotation concepts
+* Physics-based movement
+* Rigidbody forces
+
+More topics will be added as additional Unity systems are studied.
 
 ## Notes
 
-- The project targets `.NET 10.0` through `UnityLearn2.csproj`.
-- Generated folders such as `bin` and `obj` should not be treated as main learning content.
-- The useful study material is in the root `.cs` files.
+* The project targets .NET 10.0 through `UnityLearn2.csproj`.
+* The repository is intended for learning and revision purposes.
+* Generated folders such as `bin` and `obj` are not part of the learning material.
+* Most educational content is stored directly inside the root `.cs` files as commented notes and explanations.
