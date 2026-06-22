@@ -8,10 +8,11 @@ This project is designed to practice fundamental Unity development concepts:
 
 * Unity Input System
 * Physics-based movement with Rigidbody
-* Applying forces using `AddRelativeForce`
+* Applying forces using `AddRelativeForce()`
 * Object rotation and player controls
 * FixedUpdate for physics calculations
 * Scene and level prototyping
+* Using `AudioSource()` to play sound effects
 
 ## Features
 
@@ -21,6 +22,8 @@ This project is designed to practice fundamental Unity development concepts:
 * Rigidbody-driven movement
 * Sci-fi themed environment assets
 * Sandbox testing scene
+* Rocket thrust sound
+* Manual rotation using `freezeRotation`
 
 ## Controls
 
@@ -58,6 +61,45 @@ float inputRotation = Rotation.ReadValue<float>();
 
 Positive values rotate the rocket one way, while negative values rotate it in the opposite direction.
 
+### Manual Rotation
+
+Before applying rotation, the Rigidbody's automatic rotation is temporarily disabled:
+
+```csharp
+rocketRigidbody.freezeRotation = true;
+```
+
+This prevents physics interactions from affecting player-controlled rotation.
+
+After the rotation is applied:
+
+```csharp
+rocketRigidbody.freezeRotation = false;
+```
+
+Unity physics regains control of the Rigidbody's rotation.
+
+### Audio
+
+When thrust is active, the rocket plays a thrust sound using an AudioSource component.
+
+```csharp
+if (!audioSource.isPlaying)
+{
+    audioSource.Play();
+}
+```
+
+The sound starts only once while thrust is being applied.
+
+When thrust stops:
+
+```csharp
+audioSource.Stop();
+```
+
+The thrust sound immediately stops.
+
 ### Physics Update
 
 All movement calculations occur inside:
@@ -73,11 +115,12 @@ to ensure smooth and consistent physics behavior.
 ```text
 Rocket Boost/
 +-- Assets/
-|   +-- GameDevTV Assets/
+|   +-- Assets/
 |   |   +-- Models
 |   |   +-- Materials
 |   |   +-- Textures
 |   |   +-- Prefabs
+|   |   +-- Sounds
 |   |
 |   +-- Scenes/
 |   |   +-- Sandbox.unity
@@ -106,7 +149,9 @@ Responsible for:
 * Applying thrust force
 * Rotating the rocket
 * Managing Rigidbody movement
-
+* Playing thrust audio effects
+* Reading rotation values using `ReadValue<float>()`
+* Temporarily freezing Rigidbody rotation during manual rotation
 
 ## Requirements
 
@@ -122,7 +167,7 @@ Responsible for:
 
 3. Load:
 
-   Assets/Scenes/Sandbox.unity
+   `Assets/Scenes/Sandbox.unity`
 
 4. Press Play.
 
@@ -137,6 +182,9 @@ Current implementation includes:
 * Rigidbody movement
 * Input System controls
 * Sandbox environment testing
+* Audio effects
+* Thrust audio using AudioSource
+* Manual rotation using `freezeRotation`
 
 This project serves as a foundation for building a complete rocket landing and obstacle navigation game.
 
@@ -146,7 +194,6 @@ This project serves as a foundation for building a complete rocket landing and o
 * Landing pads
 * Success and crash states
 * Level progression
-* Audio effects
 * Particle systems
 * Fuel system
 * Multiple levels
@@ -154,4 +201,4 @@ This project serves as a foundation for building a complete rocket landing and o
 
 ## Credits
 
-Environment assets, models, textures, and materials are provided by GameDev.tv and are used for educational purposes within this project.
+Environment assets, models, textures, materials, and audio assets are provided by GameDev.tv and are used for educational purposes within this project.

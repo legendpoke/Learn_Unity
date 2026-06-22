@@ -6,12 +6,18 @@ public class RocketMove : MonoBehaviour
 {
     [SerializeField] InputAction thrust;
     [SerializeField] InputAction Rotation;
-    float rocketRotationSpeed = 20f;
-    private float thrustStrength = 1000f; 
+    float rocketRotationSpeed = 30f;
+    private float thrustStrength = 1000f;
+    
+
     Rigidbody rocketRigidbody;
+    AudioSource audioSource;
+
+
     private void Start()
     {
         rocketRigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -25,7 +31,23 @@ public class RocketMove : MonoBehaviour
         if (thrust.IsPressed())
         {
             rocketRigidbody.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
+            if (!audioSource.isPlaying) // play the sound only one time 
+            {
+                audioSource.Play();
+            }
         }
+
+        else
+        {
+            audioSource.Stop();
+        }
+    }
+
+    private void ApplyRotation(float RotationSpeed)
+    {
+        rocketRigidbody.freezeRotation = true;
+        transform.Rotate(Vector3.forward * RotationSpeed * Time.fixedDeltaTime);
+        rocketRigidbody.freezeRotation = false;
     }
 
     private void RotationProcess()
@@ -35,12 +57,12 @@ public class RocketMove : MonoBehaviour
 
         if(InputRotation > 0)
         {
-            transform.Rotate(Vector3.forward * rocketRotationSpeed * Time.fixedDeltaTime);
+            ApplyRotation(rocketRotationSpeed);
         }
 
         else if (InputRotation < 0)
         {
-            transform.Rotate(Vector3.back * rocketRotationSpeed * Time.fixedDeltaTime);
+            ApplyRotation(-rocketRotationSpeed);//move the rocket in -ve rotation value 
         }
     }
 
@@ -48,5 +70,10 @@ public class RocketMove : MonoBehaviour
     {
         ThrustProcess();
         RotationProcess();
+    }
+
+    private void Update()
+    {
+        
     }
 }

@@ -1,99 +1,60 @@
 # Unity Learning Projects
 
-This repository is my Unity learning workspace. It keeps beginner Unity projects, C# notes, gameplay experiments, and project README files together in one organized place.
+This repository is my Unity learning workspace. It combines Unity projects, C# learning notes, gameplay experiments, and project documentation into a single organized repository.
 
-The main goal is to learn Unity by building small things, testing ideas, and writing notes that are easy to revise later.
+The goal of this repository is to learn Unity through hands-on practice, build small playable projects, explore game development concepts, and maintain detailed notes that can be revisited later for revision.
 
-## Repository Contents
+---
+
+## Repository Structure
 
 ```text
 Unity/
-+-- Obstacle Dodge/
-+-- Rocket Boost/
-+-- Unity_Learn/
-|   +-- UnityLearn1/
-|   +-- UnityLearn2/
-+-- readme.md
+├── Obstacle Dodge/
+├── Rocket Boost/
+├── Unity_Learn/
+│   ├── UnityLearn1/
+│   └── UnityLearn2/
+└── README.md
 ```
 
-## Projects
+---
 
-### Obstacle Dodge
+## Repository Contents
 
-`Obstacle Dodge` is a playable Unity prototype where the player moves through an obstacle course while avoiding hazards.
-
-It currently includes:
-
-- Player movement with WASD or arrow keys
-- Obstacles that react to collisions
-- Score/count tracking through Console logs
-- Falling sky obstacles
-- Trigger zones
-- Flying projectile objects
-- Rotating obstacles
-- Materials and prefabs
-- An updated `SampleScene.unity` scene
-
-Main scene:
-
-```text
-Obstacle Dodge/Assets/Scenes/SampleScene.unity
-```
-
-Project README:
-
-```text
-Obstacle Dodge/readme.md
-```
-
-### Rocket Boost
-
-`Rocket Boost` is a Unity prototype focused on controlling a rocket in a 3D scene.
-
-It currently includes:
-
-- A sandbox scene
-- A rocket movement script
-- Simple keyboard movement
-- Unity Input System practice
-- GameDev.tv sci-fi assets
-- URP project settings
-
-Main scene:
-
-```text
-Rocket Boost/Assets/Scenes/Sandbox.unity
-```
-
-Project README:
-
-```text
-Rocket Boost/readme.md
-```
-
-## Learning Notes
+The repository currently contains:
 
 ### UnityLearn1
 
-`Unity_Learn/UnityLearn1` contains beginner Unity C# notes and practice scripts.
+A beginner-friendly collection of Unity and C# learning notes.
 
 Topics include:
 
-- Unity basics
-- Variables and methods
-- `SerializeField`
-- `Start()` and `Update()`
-- Transform movement
-- Rotation
-- `Time.time` and `Time.deltaTime`
-- Rigidbody physics
-- Collisions and triggers
-- Tags
-- Prefabs
-- Destroying objects
-- Score logic
-- Hazards and difficulty progression
-- Unity execution order
+* Unity basics
+* MonoBehaviour
+* Variables and methods
+* SerializeField
+* Start, Update, and FixedUpdate
+* Transform movement
+* Rotation
+* Time.deltaTime
+* Time.time
+* Rigidbody physics
+* Collisions
+* Triggers
+* Tags
+* Prefabs
+* Destroying objects
+* Score systems
+* Hazards and level design
+* Unity execution order
+* Cinemachine basics
+
+Location:
+
+```text
+Unity_Learn/UnityLearn1
+```
 
 README:
 
@@ -101,17 +62,36 @@ README:
 Unity_Learn/UnityLearn1/readme.md
 ```
 
+---
+
 ### UnityLearn2
 
-`Unity_Learn/UnityLearn2` is a C# notes project focused on Unity concepts and code structure.
+A second collection of Unity learning notes focused on Unity systems, game architecture concepts, input handling, physics, audio, and cameras.
 
 Topics include:
 
-- Importing assets
-- Empty GameObjects
-- Namespaces and classes
-- Unity Input Actions
-- `OnEnable()` and `OnDisable()`
+* Namespaces and classes
+* Importing assets
+* Empty GameObjects
+* Scene tools
+* Global vs local coordinates
+* Unity Input System
+* Input Actions
+* ReadValue<T>()
+* Rigidbody tuning
+* AddRelativeForce()
+* Rotation input
+* Enable / Disable systems
+* OnEnable() and OnDisable()
+* AudioSource and sound effects
+* Cinemachine Position Composer
+* Switch statements
+
+Location:
+
+```text
+Unity_Learn/UnityLearn2
+```
 
 README:
 
@@ -119,71 +99,253 @@ README:
 Unity_Learn/UnityLearn2/readme.md
 ```
 
-## How To Open The Unity Projects
+---
 
-1. Open **Unity Hub**.
-2. Click **Add** or **Open**.
-3. Select either `Obstacle Dodge` or `Rocket Boost`.
-4. Wait for Unity to import the project.
-5. Open the main scene for that project.
-6. Press **Play** in the Unity Editor.
+### Obstacle Dodge
+
+A beginner Unity game prototype focused on player movement, collisions, triggers, hazards, and simple gameplay systems.
+
+Features include:
+
+* Keyboard movement
+* Collision detection
+* Trigger zones
+* Projectile activation
+* Falling obstacles
+* Rotating obstacles
+* Materials and prefabs
+* Rigidbody interactions
+* Console-based score tracking
+
+Main Scene:
+
+```text
+Obstacle Dodge/Assets/Scenes/SampleScene.unity
+```
+
+README:
+
+```text
+Obstacle Dodge/readme.md
+```
+
+---
+
+### Rocket Boost
+
+A Unity 3D rocket prototype focused on physics-based movement and Unity's Input System.
+
+Features include:
+
+* Rigidbody movement
+* Rocket thrust
+* Manual rocket rotation
+* Unity Input System
+* AddRelativeForce()
+* AudioSource sound effects
+* FixedUpdate physics handling
+* Sandbox testing environment
+* GameDev.tv sci-fi assets
+
+Main Scene:
+
+```text
+Rocket Boost/Assets/Scenes/Sandbox.unity
+```
+
+README:
+
+```text
+Rocket Boost/readme.md
+```
+
+---
 
 ## Suggested Learning Order
 
-1. Read `Unity_Learn/UnityLearn1/readme.md`.
-2. Study the beginner scripts in `UnityLearn1`.
-3. Read `Unity_Learn/UnityLearn2/readme.md`.
-4. Review the UnityLearn2 notes about assets, classes, input actions, and lifecycle methods.
-5. Open `Obstacle Dodge` and test the updated scene.
-6. Read the scripts in `Obstacle Dodge/Assets/Scripts`.
-7. Open `Rocket Boost` and test the sandbox scene.
-8. Try changing small values like movement speed, rotation speed, fall delay, or thrust input.
+For someone learning from this repository, the recommended progression is:
 
-## Tools Used
+### Phase 1 - Unity Foundations
 
-- Unity
-- Unity Hub
-- C#
-- Visual Studio or another C# editor
-- Git
-- Universal Render Pipeline
-- Unity Input System
-- Cinemachine
+1. UnityLearn1
+2. Unity Basics
+3. Variables and Methods
+4. Transform Movement
+5. Time.deltaTime
+6. Rigidbody
+7. Collisions and Triggers
+8. Prefabs
+9. Unity Order of Execution
+
+### Phase 2 - Intermediate Unity Concepts
+
+10. UnityLearn2
+11. Asset Management
+12. Empty GameObjects
+13. Scene Tools
+14. Unity Input System
+15. ReadValue<T>()
+16. Enable / Disable Systems
+17. OnEnable() and OnDisable()
+18. Rigidbody Tuning
+
+### Phase 3 - Gameplay Projects
+
+19. Obstacle Dodge
+20. Rocket Boost
+
+### Phase 4 - Expansion
+
+21. Add new gameplay systems
+22. Create larger Unity projects
+23. Learn UI systems
+24. Learn animation systems
+25. Learn particle systems
+26. Learn level progression systems
+
+---
+
+## How To Open The Unity Projects
+
+### Obstacle Dodge
+
+1. Open Unity Hub.
+2. Click Add or Open.
+3. Select the Obstacle Dodge folder.
+4. Wait for Unity to import the project.
+5. Open:
+
+```text
+Assets/Scenes/SampleScene.unity
+```
+
+6. Press Play.
+
+### Rocket Boost
+
+1. Open Unity Hub.
+2. Click Add or Open.
+3. Select the Rocket Boost folder.
+4. Wait for Unity to import the project.
+5. Open:
+
+```text
+Assets/Scenes/Sandbox.unity
+```
+
+6. Press Play.
+
+---
+
+## Technologies Used
+
+* Unity
+* Unity Hub
+* C#
+* Visual Studio
+* Git
+* Universal Render Pipeline (URP)
+* Unity Input System
+* Cinemachine
+* Rigidbody Physics
+
+---
 
 ## Git Notes
 
-Unity creates many generated folders and editor files. The `.gitignore` files are set up to avoid committing most generated content.
+Unity generates many temporary and editor-specific files that should not be committed.
 
-Usually keep these in Git:
+Usually commit:
 
-- `Assets`
-- `Packages`
-- `ProjectSettings`
-- README files
-- `.gitignore` files
+```text
+Assets/
+Packages/
+ProjectSettings/
+README.md
+.gitignore
+```
 
-Usually do not commit these:
+Usually ignore:
 
-- `Library`
-- `Temp`
-- `Logs`
-- `UserSettings`
-- `.vs`
-- generated build output
+```text
+Library/
+Temp/
+Logs/
+UserSettings/
+.vs/
+Builds/
+```
+
+---
 
 ## Current Status
 
-This repository now contains:
+This repository currently contains:
 
-- One playable obstacle-dodging prototype with an updated scene
-- One rocket movement prototype
-- Two Unity/C# learning note folders
-- README files for the root workspace and each main project
+* Two Unity learning note collections
+* One obstacle-dodging prototype
+* One rocket movement prototype
+* Notes covering Unity fundamentals
+* Input System practice
+* Rigidbody physics concepts
+* Audio basics
+* Cinemachine camera concepts
+* Project-specific documentation
+
+The repository continues to grow as new Unity topics and projects are learned.
+
+---
 
 ## Future Goals
 
-- Improve `Obstacle Dodge` with UI, win/lose conditions, checkpoints, sound, and more levels.
-- Improve `Rocket Boost` with physics-based thrust, rotation, collisions, landing pads, particles, and level progression.
-- Add more Unity learning notes as new topics are studied.
-- Add screenshots or short gameplay previews.
-- Keep README files updated as each project changes.
+### Learning Notes
+
+* Expand UnityLearn1
+* Expand UnityLearn2
+* Add advanced Unity topics
+* Add AI and enemy behavior notes
+* Add animation notes
+* Add UI system notes
+
+### Obstacle Dodge
+
+* Win/Lose conditions
+* UI system
+* Checkpoints
+* Audio
+* More levels
+* Better visuals
+
+### Rocket Boost
+
+* Landing pads
+* Success and crash states
+* Level progression
+* Particle effects
+* Fuel system
+* Multiple levels
+* UI systems
+
+### Long-Term Goals
+
+* Build complete Unity games
+* Learn advanced gameplay programming
+* Learn optimization techniques
+* Learn animation workflows
+* Learn shader basics
+* Publish finished Unity projects
+
+---
+
+## Learning Philosophy
+
+This repository is built around learning by doing.
+
+The objective is not only to memorize Unity APIs, but to understand:
+
+* What a feature does
+* Why it exists
+* When it should be used
+* How it contributes to game development
+
+Each project and note serves as a stepping stone toward building larger and more complete Unity games in the future.

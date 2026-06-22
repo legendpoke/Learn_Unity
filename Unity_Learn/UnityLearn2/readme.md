@@ -14,6 +14,9 @@ This repository is **not a complete Unity game project**. Instead, it serves as 
 * Classes
 * Using Directives
 * Code Organization
+* Access Modifiers
+* Methods
+* Switch Statements
 
 ### Unity Fundamentals
 
@@ -37,11 +40,25 @@ This repository is **not a complete Unity game project**. Instead, it serves as 
 ### Physics & Movement
 
 * Rigidbody Components
+* Rigidbody Tuning
 * Physics-Based Movement
 * `AddRelativeForce()`
 * Rotation Input
 * Local Space vs World Space
 * Frame-Independent Movement Concepts
+
+### Audio
+
+* Audio Introduction
+* Audio Sources
+* Sound Effects (SFX)
+* Audio Playback
+
+### Cameras
+
+* Position Composer
+* Player Follow Camera
+* Camera Framing Concepts
 
 ### GameObject & Component Management
 
@@ -58,15 +75,20 @@ This repository is **not a complete Unity game project**. Instead, it serves as 
 ```text
 UnityLearn2/
 ├── AddRelativeForce.cs
+├── AudioIntroduction.cs
+├── AudioSourceSFX.cs
 ├── EmptyObjectImportance.cs
 ├── Enable_Disable.cs
 ├── ImportingAssests.cs
 ├── InputActions.cs
 ├── NameSpaces_Classes.cs
 ├── onEnable_onDisable.cs
+├── PositionComposer.cs
 ├── ReadValue.cs
+├── RigidBodyTunning.cs
 ├── RotationInput.cs
 ├── Scene.cs
+├── SwitchStatements.cs
 ├── UnityLearn2.csproj
 ├── UnityLearn2.slnx
 └── README.md
@@ -103,8 +125,6 @@ Topics:
 * Animations
 * Prefabs
 * Project Folder Organization
-
-> Note: The file name is currently `ImportingAssests.cs` while the class name is `ImportingAssets`.
 
 ---
 
@@ -232,6 +252,30 @@ for physics calculations.
 
 ---
 
+### RigidBodyTunning.cs
+
+Explains Rigidbody settings and physics tuning.
+
+Topics:
+
+* Mass
+* Linear Damping
+* Angular Damping
+* Use Gravity
+* Is Kinematic
+* Interpolate
+* Collision Detection
+* Constraints
+* Layer Overrides
+
+Focus:
+
+* Understanding how Rigidbody settings affect gameplay feel.
+* Rocket movement tuning.
+* Physics behaviour optimization.
+
+---
+
 ### Enable_Disable.cs
 
 Explains how GameObjects and Components can be turned on and off.
@@ -270,6 +314,86 @@ Comparison:
 
 ---
 
+### AudioIntroduction.cs
+
+Introduces Unity's audio system.
+
+Topics:
+
+* AudioClip
+* AudioSource
+* AudioListener
+* Sound Effects
+* Background Music
+* Audio Workflow
+
+---
+
+### AudioSourceSFX.cs
+
+Explains how AudioSource is used for Sound Effects.
+
+Topics:
+
+* Playing Sounds
+* Stopping Sounds
+* Looping Audio
+* Play One Shot Sounds
+* Volume
+* Pitch
+* 2D Audio
+* 3D Audio
+
+Examples:
+
+* Rocket Engine Sound
+* Collision Sound
+* Button Click Sound
+
+---
+
+### PositionComposer.cs
+
+Explains Cinemachine's Position Composer.
+
+Topics:
+
+* Camera Follow Systems
+* Target Framing
+* Dead Zone
+* Soft Zone
+* Follow Behaviour
+* Camera Smoothing
+
+Examples:
+
+* Rocket Follow Camera
+* Platformer Camera
+* Third-Person Camera
+
+---
+
+### SwitchStatements.cs
+
+Introduces Switch Statements in C#.
+
+Topics:
+
+* switch
+* case
+* break
+* default
+* Comparing Multiple Values
+* Alternative to if-else chains
+
+Examples:
+
+* Game States
+* Audio States
+* Level Selection
+
+---
+
 ## How To Use This Project
 
 1. Open `UnityLearn2.slnx` in Visual Studio or another C# editor.
@@ -296,12 +420,26 @@ Comparison:
 7. InputActions.cs
 8. ReadValue.cs
 
-### Physics & Gameplay
+### Gameplay
 
 9. RotationInput.cs
 10. AddRelativeForce.cs
+11. RigidBodyTunning.cs
 
-This progression moves from C# fundamentals into Unity systems, input handling, object management, and finally physics-based gameplay mechanics.
+### Audio
+
+12. AudioIntroduction.cs
+13. AudioSourceSFX.cs
+
+### Camera Systems
+
+14. PositionComposer.cs
+
+### C# Logic
+
+15. SwitchStatements.cs
+
+This progression moves from C# fundamentals into Unity systems, input handling, object management, gameplay programming, audio systems, and camera control.
 
 ---
 
@@ -315,6 +453,7 @@ This progression moves from C# fundamentals into Unity systems, input handling, 
 * Variables
 * Access Modifiers
 * Code Organization
+* Switch Statements
 
 ### Unity Engine
 
@@ -335,10 +474,27 @@ This progression moves from C# fundamentals into Unity systems, input handling, 
 ### Physics
 
 * Rigidbody
+* Rigidbody Tuning
 * AddRelativeForce()
 * Local Space
 * World Space
 * FixedUpdate()
+
+### Audio
+
+* AudioClip
+* AudioSource
+* AudioListener
+* Sound Effects
+* Audio Playback
+
+### Cameras
+
+* Position Composer
+* Camera Following
+* Dead Zones
+* Soft Zones
+* Camera Framing
 
 ### Gameplay Programming
 
@@ -347,6 +503,7 @@ This progression moves from C# fundamentals into Unity systems, input handling, 
 * Physics Movement
 * Player Input Handling
 * Object Activation
+* Player Follow Camera
 
 ---
 
@@ -365,6 +522,11 @@ Current topics include:
 * Rotation Concepts
 * Physics-Based Movement
 * Rigidbody Forces
+* Rigidbody Tuning
+* Audio Systems
+* Sound Effects
+* Switch Statements
+* Player Follow Camera (Position Composer)
 
 Additional Unity systems and gameplay programming topics will be added as learning progresses.
 
@@ -377,3 +539,16 @@ Additional Unity systems and gameplay programming topics will be added as learni
 * Generated folders such as `bin`, `obj`, and `.vs` are not part of the learning material.
 * Most educational content is stored directly inside `.cs` files as commented notes and explanations.
 * Concepts are explained using beginner-friendly examples, revision summaries, and memory tricks for long-term retention.
+
+---
+
+## Learning Philosophy
+
+The goal of this repository is not just to memorize Unity APIs, but to understand:
+
+* What a feature does.
+* Why it exists.
+* When it should be used.
+* How it connects to real game development projects.
+
+Each note is written so it can be revisited months later and still be understandable without rewatching tutorials.

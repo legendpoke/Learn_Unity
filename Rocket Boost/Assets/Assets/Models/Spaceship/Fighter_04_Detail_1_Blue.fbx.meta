@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a41951dc5dfb26c4d9f2e74b27bb583c
+guid: 953fe30c7b4888b418f3afc42ceefee8
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Colour_Palette_Sci_Fi
-    second: {fileID: -6141262742250102974, guid: aa840126f37030e459305ecd09c6f48f, type: 3}
+    second: {fileID: -4803449312067332711, guid: 047501233d2bcb64fbc12eb56cf2d3c8, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Colour_Palette_Sci_Fi_Roughness
-    second: {fileID: 7515526912956163633, guid: ad39e1743733cb048b438c089ba4ec23, type: 3}
+      name: Colour_Palette_Sci_Fi_Emission
+    second: {fileID: 8443986690989818273, guid: 047501233d2bcb64fbc12eb56cf2d3c8, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
