@@ -86,6 +86,8 @@ Topics include:
 * AudioSource and sound effects
 * Cinemachine Position Composer
 * Switch statements
+* Load Next Scene
+* Scene Manager
 
 Location:
 
@@ -145,7 +147,9 @@ Features include:
 * AudioSource sound effects
 * FixedUpdate physics handling
 * Sandbox testing environment
-* GameDev.tv sci-fi assets
+* Assets
+* Added levels 
+* Respawn Point in the scene
 
 Main Scene:
 
@@ -188,20 +192,21 @@ For someone learning from this repository, the recommended progression is:
 16. Enable / Disable Systems
 17. OnEnable() and OnDisable()
 18. Rigidbody Tuning
+19. Load Next Scene or Load Next levels
+20. Respawn in the scene
 
 ### Phase 3 - Gameplay Projects
 
-19. Obstacle Dodge
-20. Rocket Boost
+21. Obstacle Dodge
+22. Rocket Boost
 
 ### Phase 4 - Expansion
 
-21. Add new gameplay systems
-22. Create larger Unity projects
-23. Learn UI systems
-24. Learn animation systems
-25. Learn particle systems
-26. Learn level progression systems
+23. Add new gameplay systems
+24. Create larger Unity projects
+25. Learn UI systems
+26. Learn animation systems
+27. Learn particle systems
 
 ---
 
@@ -248,6 +253,7 @@ Assets/Scenes/Sandbox.unity
 * Unity Input System
 * Cinemachine
 * Rigidbody Physics
+* Scene Manager
 
 ---
 

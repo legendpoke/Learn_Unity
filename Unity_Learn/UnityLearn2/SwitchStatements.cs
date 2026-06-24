@@ -17,6 +17,10 @@ namespace UnityLearn2
         need to compare one value against
         multiple possible values.
 
+        These are the conditional like If/Else statements 
+        Allow us to compare a single variable can change or vary to a series of constants 
+        constants : Thinngs that do not change or the vlaue do not change 
+
         Think:
 
         One Variable

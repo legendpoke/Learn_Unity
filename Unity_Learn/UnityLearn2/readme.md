@@ -28,6 +28,11 @@ This repository is **not a complete Unity game project**. Instead, it serves as 
 * Pivot vs Center
 * Grid and Grid Snapping
 * Unity Lifecycle Methods
+* Scene Management
+* Build Profiles
+* Build Index
+* Scene Loading
+* Scene Reloading
 
 ### Unity Input System
 
@@ -81,10 +86,12 @@ UnityLearn2/
 ├── Enable_Disable.cs
 ├── ImportingAssests.cs
 ├── InputActions.cs
+├── LoadNextScene.cs
 ├── NameSpaces_Classes.cs
 ├── onEnable_onDisable.cs
 ├── PositionComposer.cs
 ├── ReadValue.cs
+├── RespawnUsingSceneManager.cs
 ├── RigidBodyTunning.cs
 ├── RotationInput.cs
 ├── Scene.cs
@@ -394,6 +401,52 @@ Examples:
 
 ---
 
+### RespawnUsingSceneManager.cs
+
+Explains how Unity reloads scenes to respawn a player after failure.
+
+Topics:
+
+* SceneManager
+* GetActiveScene()
+* buildIndex
+* LoadScene()
+* Scene Reloading
+* Respawning
+* Restarting Levels
+* Crash Recovery
+
+Examples:
+
+* Rocket Crash
+* Player Death
+* Falling Off Map
+* Restart Level Button
+
+---
+
+### LoadNextScene.cs
+
+Explains how Unity loads the next scene or level.
+
+Topics:
+
+* SceneManager
+* GetActiveScene()
+* buildIndex
+* sceneCountInBuildSettings
+* Loading Next Level
+* Level Progression
+* Scene Navigation
+* Game Completion Logic
+
+Examples:
+
+* Level 1 → Level 2
+* Main Menu → Game Scene
+* Victory Screen
+* Story Progression
+
 ## How To Use This Project
 
 1. Open `UnityLearn2.slnx` in Visual Studio or another C# editor.
@@ -435,9 +488,13 @@ Examples:
 
 14. PositionComposer.cs
 
+### Scene Management
+15. RespawnUsingSceneManager.cs
+16. LoadNextScene.cs
+
 ### C# Logic
 
-15. SwitchStatements.cs
+17. SwitchStatements.cs
 
 This progression moves from C# fundamentals into Unity systems, input handling, object management, gameplay programming, audio systems, and camera control.
 
@@ -505,6 +562,16 @@ This progression moves from C# fundamentals into Unity systems, input handling, 
 * Object Activation
 * Player Follow Camera
 
+### Scene Management
+* SceneManager
+* LoadScene()
+* GetActiveScene()
+* Build Index
+* Scene Reloading
+* Scene Progression
+* Respawn Systems
+* Level Management
+
 ---
 
 ## Current Status
@@ -525,6 +592,9 @@ Current topics include:
 * Rigidbody Tuning
 * Audio Systems
 * Sound Effects
+* Scene Management
+* Respawn Systems
+* Level Progression
 * Switch Statements
 * Player Follow Camera (Position Composer)
 

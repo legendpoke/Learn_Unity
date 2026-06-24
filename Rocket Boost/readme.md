@@ -13,6 +13,8 @@ This project is designed to practice fundamental Unity development concepts:
 * FixedUpdate for physics calculations
 * Scene and level prototyping
 * Using `AudioSource()` to play sound effects
+* Collision detection using Unity physics
+* Scene management with `SceneManager`
 
 ## Features
 
@@ -24,6 +26,10 @@ This project is designed to practice fundamental Unity development concepts:
 * Sandbox testing scene
 * Rocket thrust sound
 * Manual rotation using `freezeRotation`
+* Fuel collection system
+* Landing pad detection
+* Crash detection and level restart
+* Automatic level progression
 
 ## Controls
 
@@ -110,6 +116,77 @@ FixedUpdate()
 
 to ensure smooth and consistent physics behavior.
 
+## Collision System
+
+The rocket reacts differently depending on the object tag it collides with.
+
+### Fuel
+
+When the rocket collides with a Fuel object:
+
+```csharp
+Destroy(collision.gameObject);
+```
+
+The fuel object is collected and removed from the scene.
+
+### Landing Pad
+
+When the rocket lands on a Landing Pad:
+
+```csharp
+NextScene();
+```
+
+The next level is loaded.
+
+### Launch Pad
+
+The Launch Pad is considered a safe object and does not trigger a crash.
+
+### Crash Detection
+
+Colliding with any object that is not recognized as Fuel, LandingPad, or LaunchPad causes:
+
+```csharp
+ReloadScene();
+```
+
+The current scene is restarted.
+
+## Scene Management
+
+The project uses Unity's SceneManager to handle level progression.
+
+### Reload Current Level
+
+```csharp
+SceneManager.LoadScene(currentScene);
+```
+
+Reloads the active level after a crash.
+
+### Load Next Level
+
+```csharp
+SceneManager.LoadScene(nextScene);
+```
+
+Loads the next scene in Build Settings.
+
+### Loop Back To First Level
+
+When the final scene is completed:
+
+```csharp
+if(nextScene == SceneManager.sceneCountInBuildSettings)
+{
+    nextScene = 0;
+}
+```
+
+The game returns to the first level.
+
 ## Project Structure
 
 ```text
@@ -124,9 +201,12 @@ Rocket Boost/
 |   |
 |   +-- Scenes/
 |   |   +-- Sandbox.unity
+|   |   +-- Level2.unity
+|   |   +-- Level3.unity
 |   |
 |   +-- Scripts/
 |   |   +-- RocketMove.cs
+|   |   +-- CollisionDetection.cs
 |   |
 |   +-- Settings/
 |
@@ -152,6 +232,18 @@ Responsible for:
 * Playing thrust audio effects
 * Reading rotation values using `ReadValue<float>()`
 * Temporarily freezing Rigidbody rotation during manual rotation
+
+### CollisionDetection.cs
+
+Responsible for:
+
+* Detecting rocket collisions
+* Fuel collection
+* Landing pad detection
+* Launch pad detection
+* Scene reloading after crashes
+* Loading the next level
+* Looping levels after the final scene
 
 ## Requirements
 
@@ -185,19 +277,23 @@ Current implementation includes:
 * Audio effects
 * Thrust audio using AudioSource
 * Manual rotation using `freezeRotation`
+* Fuel collection
+* Landing pad detection
+* Crash detection
+* Scene reloading
+* Level progression system
 
 This project serves as a foundation for building a complete rocket landing and obstacle navigation game.
 
 ## Planned Features
 
-* Collision detection
-* Landing pads
-* Success and crash states
-* Level progression
+* Success and crash effects
 * Particle systems
-* Fuel system
+* Fuel system expansion
 * Multiple levels
 * UI and score tracking
+* Level completion effects
+* Sound effects for landing and crashes
 
 ## Credits
 
