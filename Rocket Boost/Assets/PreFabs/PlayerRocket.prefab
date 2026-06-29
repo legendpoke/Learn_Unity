@@ -12,10 +12,8 @@ GameObject:
   - component: {fileID: 3933600537907991303}
   - component: {fileID: 2535754899628025757}
   - component: {fileID: 7816532347681080034}
-  - component: {fileID: 1319613048598952320}
   - component: {fileID: 5622153359356778935}
   - component: {fileID: 4022476638977483769}
-  - component: {fileID: 7992890261797058267}
   m_Layer: 0
   m_Name: PlayerRocket
   m_TagString: Untagged
@@ -101,6 +99,7 @@ MonoBehaviour:
       m_Action: Rotation
       m_Flags: 8
     m_Flags: 0
+  thrustSound: {fileID: 8300000, guid: 8b334b64afa0037458d8df7a8913eedd, type: 3}
 --- !u!54 &2535754899628025757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,103 +148,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.14, y: 2.48, z: 1.46}
   m_Center: {x: 0.14, y: 1.37, z: 0}
---- !u!82 &1319613048598952320
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363389202497822105}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 8b334b64afa0037458d8df7a8913eedd, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &5622153359356778935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03588854c80a62240a6f29d806d8fe05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionDetection
+  rocketCrashSound: {fileID: 8300000, guid: 8e0678226414b724dadcb525c76283bd, type: 3}
+  LandingSound: {fileID: 8300000, guid: 3276c767ef24ffc45a9ba462002962cd, type: 3}
 --- !u!82 &4022476638977483769
 AudioSource:
   m_ObjectHideFlags: 0
@@ -269,7 +173,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 8b334b64afa0037458d8df7a8913eedd, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -355,18 +259,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7992890261797058267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363389202497822105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03588854c80a62240a6f29d806d8fe05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollisionDetection
 --- !u!1001 &8701682266447314772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -419,6 +311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 9113961483072506109, guid: cf91000b018c5e64d87fba48f5ab81b9, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f6a44c6bd042db64fa491159f0445117, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

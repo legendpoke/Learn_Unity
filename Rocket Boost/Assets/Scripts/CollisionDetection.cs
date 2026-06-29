@@ -3,13 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class CollisionDetection : MonoBehaviour
 {
-    void ReloadScene()
+
+    private float delayTime = 2f;
+    [SerializeField] AudioClip rocketCrashSound;
+    [SerializeField] AudioClip LandingSound;
+    AudioSource audioSource;
+
+    void EnableRocketMoveScript()
+    {
+        GetComponent<RocketMove>().enabled = false;// to turn of the script
+    }
+    void ReloadSameLvl()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
     }
 
-    void NextScene()
+    void NextLvl()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         int NextScene = currentScene + 1;
@@ -20,6 +30,28 @@ public class CollisionDetection : MonoBehaviour
 
         SceneManager.LoadScene(NextScene);
     }
+
+    void ReloadSceneAfterCrash()
+    {
+        EnableRocketMoveScript();
+        Invoke("ReloadSameLvl", delayTime);
+    }
+    
+    void CrashSound()
+    {
+        audioSource.PlayOneShot(rocketCrashSound);
+    }
+
+    void landingSound()
+    {
+        audioSource.PlayOneShot(LandingSound);
+    }
+
+    void DelayNxtLvl()
+    {
+        EnableRocketMoveScript();
+        Invoke("NextLvl",delayTime);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         switch(collision.gameObject.tag){
@@ -29,15 +61,18 @@ public class CollisionDetection : MonoBehaviour
                 break;
 
             case "LandingPad":
-                NextScene();
+                DelayNxtLvl();
+                landingSound();
                 Debug.Log("Rocket Landed Safely");
                 break;
 
             case "LaunchPad":
                 Debug.Log("Rocket is on launch pad");
                 break;
+
             default:
-                ReloadScene();
+                ReloadSceneAfterCrash();
+                CrashSound();
                 Debug.Log("Rocket is crashed");
                 break;
         }
@@ -45,7 +80,7 @@ public class CollisionDetection : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

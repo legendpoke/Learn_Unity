@@ -6,9 +6,9 @@ public class RocketMove : MonoBehaviour
 {
     [SerializeField] InputAction thrust;
     [SerializeField] InputAction Rotation;
-    float rocketRotationSpeed = 30f;
+    float rocketRotationSpeed = 100f;
     private float thrustStrength = 1000f;
-    
+    [SerializeField] AudioClip thrustSound;
 
     Rigidbody rocketRigidbody;
     AudioSource audioSource;
@@ -33,7 +33,7 @@ public class RocketMove : MonoBehaviour
             rocketRigidbody.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
             if (!audioSource.isPlaying) // play the sound only one time 
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(thrustSound);
             }
         }
 

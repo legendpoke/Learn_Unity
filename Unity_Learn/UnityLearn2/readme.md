@@ -58,6 +58,7 @@ This repository is **not a complete Unity game project**. Instead, it serves as 
 * Audio Sources
 * Sound Effects (SFX)
 * Audio Playback
+* Multiple Audio 
 
 ### Cameras
 
@@ -82,11 +83,14 @@ UnityLearn2/
 ├── AddRelativeForce.cs
 ├── AudioIntroduction.cs
 ├── AudioSourceSFX.cs
+├── CodeLayout.cs
 ├── EmptyObjectImportance.cs
 ├── Enable_Disable.cs
 ├── ImportingAssests.cs
+├── InvokeMethod.cs
 ├── InputActions.cs
 ├── LoadNextScene.cs
+├── Multiple_Audio_clips.cs
 ├── NameSpaces_Classes.cs
 ├── onEnable_onDisable.cs
 ├── PositionComposer.cs
